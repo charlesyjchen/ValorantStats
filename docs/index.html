@@ -8,7 +8,7 @@
 <H1>Valorant Statistics</H1>
 <p>Just for friends :) Please enter accurate information for yourself lol</p>
 
-<form id="statSubmission">
+<form id="statSubmission" name="statSubmission">
 	<label for="username">Username</label>
 	<input type="text" id="username" name="Username">
 
@@ -42,6 +42,19 @@
 	<br>
 	<input type="submit" id="submitbutton">
 </form>
+
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbzvcRr3RKQmEjxCc7LMvPRbAbOU4vlbbyVR1mEK7QeV6XZifIk/exec'
+  const form = document.forms['statSubmission']
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
+
 
 <head>
   <script src="connection.js"></script>
