@@ -10,7 +10,7 @@
 <body>
 	<H1>Valorant Statistics</H1>
 	<p>Just for friends :) Please enter accurate information for yourself lol</p>
-	<form method="post" id="statSubmission" name="statSubmission">
+	<form id="statSubmission" name="statSubmission">
 		<label for="username">Username</label>
 		<input type="text" id="username" name="Username">
 
@@ -47,7 +47,7 @@
 
 	<script>
 		var $form = $('form#statSubmission'),
-			url = 'https://script.google.com/macros/s/AKfycbxXo8KFwGfgvmkygrP7U688E_vyrqCbnIg7d8sg3wm1A0o2SQGI/exec?Username=test'
+			url = 'https://script.google.com/macros/s/AKfycbxXo8KFwGfgvmkygrP7U688E_vyrqCbnIg7d8sg3wm1A0o2SQGI/exec'
 
 		$('#submitButton').on('click', function(e) {
 		  e.preventDefault();
