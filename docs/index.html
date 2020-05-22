@@ -1,62 +1,65 @@
+<!DOCTYPE html>
 <HTML>
-
 <HEAD>
-
-<TITLE>Valorant Statistics</TITLE>
-
+	<meta charset="utf-8">
+	<TITLE>Valorant Statistics</TITLE>
+	<script src="jquery-3.5.1.min.js"></script>
+	 <script src="jquery.serialize-object.min.js"></script>
 </HEAD>
-<H1>Valorant Statistics</H1>
-<p>Just for friends :) Please enter accurate information for yourself lol</p>
 
-<form id="statSubmission" name="statSubmission">
-	<label for="username">Username</label>
-	<input type="text" id="username" name="Username">
+<body>
+	<H1>Valorant Statistics</H1>
+	<p>Just for friends :) Please enter accurate information for yourself lol</p>
+	<form id="statSubmission" name="statSubmission">
+		<label for="username">Username</label>
+		<input type="text" id="username" name="Username">
 
-	<label for="datesubmit">Date</label>
-	<input type="date" id="datesubmit" name="Date">
+		<label for="datesubmit">Date</label>
+		<input type="date" id="datesubmit" name="Date">
 
-	<label for="gametype">Game Type</label>
-	<select id="gametype" name="Gametype">
-		<option value="Unranked">Unranked</option>
-		<option value="Competitive">Competitive</option>
-	</select>
+		<label for="gametype">Game Type</label>
+		<select id="gametype" name="Gametype">
+			<option value="Unranked">Unranked</option>
+			<option value="Competitive">Competitive</option>
+		</select>
 
-	<label for="map">Map</label>
-	<select id="map" name="map">
-		<option value="Haven">Haven</option>
-		<option value="Bind">Bind</option>
-		<option value="Split">Split</option>
-	</select>
+		<label for="map">Map</label>
+		<select id="map" name="map">
+			<option value="Haven">Haven</option>
+			<option value="Bind">Bind</option>
+			<option value="Split">Split</option>
+		</select>
 
-	<label for="outcome">Outcome</label>
-	<select id="outcome" name="outcome">
-		<option value="Win">Win</option>
-		<option value="Loss">Loss</option>
-	</select>
+		<label for="outcome">Outcome</label>
+		<select id="outcome" name="outcome">
+			<option value="Win">Win</option>
+			<option value="Loss">Loss</option>
+		</select>
 
-	<label for="kills">Kills</label>
-	<input type="text" id="kills" name="Kills">
+		<label for="kills">Kills</label>
+		<input type="text" id="kills" name="Kills">
 
-	<label for="deaths">Deaths</label>
-	<input type="text" id="deaths" name="Deaths">
-	<br>
-	<input type="submit" id="submitbutton">
-</form>
+		<label for="deaths">Deaths</label>
+		<input type="text" id="deaths" name="Deaths">
+		<br>
+		<input type="submit" id="submitButton">
+	</form>
 
-<script src="https://wzrd.in/standalone/formdata-polyfill"></script>
-<script src="https://wzrd.in/standalone/promise-polyfill@latest"></script>
-<script src="https://wzrd.in/standalone/whatwg-fetch@latest"></script>
+	<script>
+		var $form = $('form#statSubmission'),
+			url = 'https://script.google.com/macros/s/AKfycbxXo8KFwGfgvmkygrP7U688E_vyrqCbnIg7d8sg3wm1A0o2SQGI/exec'
 
-<script>
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbzvcRr3RKQmEjxCc7LMvPRbAbOU4vlbbyVR1mEK7QeV6XZifIk/exec'
-  const form = document.forms['statSubmission']
-
-  form.addEventListener('submit', e => {
-    e.preventDefault()
-    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-      .then(response => console.log('Success!', response))
-      .catch(error => console.error('Error!', error.message))
-  })
-</script>
-
+		$('#submitButton').on('click', function(e) {
+		  e.preventDefault();
+		  var jqxhr = $.ajax({
+			url: url,
+			method: "GET",
+			dataType: "json",
+			data: $form.serializeObject()
+		  }).success(
+			alert('success');
+		  );
+		})
+	</script>
+</body>
 </HTML>
