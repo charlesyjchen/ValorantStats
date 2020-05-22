@@ -10,7 +10,7 @@
 <body>
 	<H1>Valorant Statistics</H1>
 	<p>Just for friends :) Please enter accurate information for yourself lol</p>
-	<form id="statSubmission" name="statSubmission">
+	<form method="post" id="statSubmission" name="statSubmission">
 		<label for="username">Username</label>
 		<input type="text" id="username" name="Username">
 
@@ -55,10 +55,10 @@
 			url: url,
 			method: "GET",
 			dataType: "json",
-			data: $form.serializeObject()
-		  }).success(
-			alert('success');
-		  );
+			data: $form.serialize()
+		  }).then(function (e) {
+			alert("Success!");
+			});
 		})
 	</script>
 </body>
