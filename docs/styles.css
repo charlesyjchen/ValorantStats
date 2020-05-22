@@ -1,0 +1,19 @@
+
+h1 {
+	text-align: center;
+}
+
+div {
+	width: 50%;
+	margin: auto;
+	border-style: dashed;
+    border-width: 3px;
+    border-left-width: 10px;
+    border-right-width: 10px;
+    border-color: red;
+	background-color: white;
+}
+
+body{
+	background-image: url('BackgroundImage.jpg');
+}
