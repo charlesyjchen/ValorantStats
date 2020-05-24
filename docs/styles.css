@@ -1,19 +1,29 @@
-
-h1 {
+/* headers */
+h1, p {
 	text-align: center;
 }
 
+/* form */
+fieldset {
+	margin-left: 30px;
+	margin-right: 30px;
+}
 div {
-	width: 50%;
-	margin: auto;
-	border-style: dashed;
-    border-width: 3px;
-    border-left-width: 10px;
-    border-right-width: 10px;
-    border-color: red;
+	width: 100%;
 	background-color: white;
+	/* border-style:solid; */
+}
+label, input, select{
+	width:100%;
+	display: block;
+	font-weight:bold;
+}
+span{
+	display:inline-block;
 }
 
+
+/* background */
 body{
 	background-image: url('BackgroundImage.jpg');
 }
