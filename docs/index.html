@@ -9,7 +9,7 @@
 </head>
 
 <body>
-	<div style="margin:auto; width:50%">
+	<div style="margin:auto; margin-top:10px; width:65%; border-style:solid">
 		<h1>Valorant Statistics</h1>
 		<p>Just for friends :) Please enter accurate information for yourself lol</p>
 		<fieldset>
@@ -28,7 +28,7 @@
 				<div class="secondRow">
 					<span style="width:24.5%">
 						<label for="gametype">Game Type</label>
-						<select id="gametype" name="Gametype">
+						<select id="gametype" name="Game_Type">
 							<option value="Unranked">Unranked</option>
 							<option value="Competitive">Competitive</option>
 						</select>
@@ -79,6 +79,21 @@
 						<input type="text" id="assists" name="Assists">
 					</span>
 				</div>
+				<br>
+				<div class="fourthRow">
+					<span style="width:32.5%">
+						<label for="combatScore">Combat Score</label>
+						<input type="text" id="combatScore" name="Combat_Score">
+					</span>
+					<span style="width:32.5%; margin-left:0.5%"">
+						<label for="roundsWon">Rounds Won</label>
+						<input type="text" id="roundsWon" name="Rounds_Won">
+					</span>
+					<span style="width:32.5%; margin-left:0.5%"">
+						<label for="roundsLost">Rounds Lost</label>
+						<input type="text" id="roundsLost" name="Rounds_Lost">
+					</span>
+				</div>
 				<br> <br>
 				<div>
 					<input type="submit" id="submitButton" style="width:25%; margin:auto">
@@ -88,10 +103,16 @@
 		</fieldset>
 		
 		<!-- <iframe width="43%" height="500" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTKbcONZJAmdOzRJGD8DIGPYuLiB_-8ftnV0BGn5C836q-MaDgpqpuLK8Ag8kYn7IggSYFg_upBWG0m/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"></iframe> -->
+		<!-- <iframe width="800" height="400" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/1Qy_RX6mUWXmTghXZlzFPUyKBkS91DFK3nKZwAiNx_pY/htmlembed/sheet?gid=2035895927&range=A1"></iframe> -->
+		<h2 style="text-align:center">General Stats</h2>
+		<div style="display:inline-block; width:47.5%">
+			<iframe width="615" height="400" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/1Qy_RX6mUWXmTghXZlzFPUyKBkS91DFK3nKZwAiNx_pY/htmlembed/sheet?gid=2035895927&range=A21"></iframe>
+		</div>
+		<div style="display:inline-block; width:47.5%; margin-left:25px">
+			<iframe width="615" height="400" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/1Qy_RX6mUWXmTghXZlzFPUyKBkS91DFK3nKZwAiNx_pY/htmlembed/sheet?gid=2035895927&range=I1"></iframe>
+		</div>
 		<br>
-		<iframe width="800" height="400" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/1Qy_RX6mUWXmTghXZlzFPUyKBkS91DFK3nKZwAiNx_pY/htmlembed/sheet?gid=2035895927&range=A1"></iframe>
-		<br>
-		<iframe width="800" height="400" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/1Qy_RX6mUWXmTghXZlzFPUyKBkS91DFK3nKZwAiNx_pY/htmlembed/sheet?gid=2035895927&range=I1"></iframe>
+		<h2 style="text-align:center">Username Lookup</h2>
 	</div>
 	<script>
 		var $form = $('form#statSubmission'),
