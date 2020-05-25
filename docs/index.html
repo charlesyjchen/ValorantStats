@@ -5,13 +5,17 @@
 	<title>Valorant Statistics</title>
 	<script src="jquery-3.5.1.min.js"></script>
 	<script src="jquery.serialize-object.min.js"></script>
+	<script src="chartShowHide.js"></script>
 	<link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 
 <body>
 	<div style="margin:auto; margin-top:10px; width:65%; border-style:solid">
+	<!-- title/description -->
 		<h1>Valorant Statistics</h1>
 		<p>Just for friends :) Please enter accurate information for yourself lol</p>
+		
+		<!-- submit info form -->
 		<fieldset>
 			<form id="statSubmission" name="statSubmission">
 				<div class="firstRow">
@@ -104,16 +108,45 @@
 		
 		<!-- <iframe width="43%" height="500" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTKbcONZJAmdOzRJGD8DIGPYuLiB_-8ftnV0BGn5C836q-MaDgpqpuLK8Ag8kYn7IggSYFg_upBWG0m/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"></iframe> -->
 		<!-- <iframe width="800" height="400" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/1Qy_RX6mUWXmTghXZlzFPUyKBkS91DFK3nKZwAiNx_pY/htmlembed/sheet?gid=2035895927&range=A1"></iframe> -->
+		
+		<!-- show general charts -->
 		<h2 style="text-align:center">General Stats</h2>
 		<div style="display:inline-block; width:47.5%">
 			<iframe width="615" height="400" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/1Qy_RX6mUWXmTghXZlzFPUyKBkS91DFK3nKZwAiNx_pY/htmlembed/sheet?gid=2035895927&range=A21"></iframe>
 		</div>
 		<div style="display:inline-block; width:47.5%; margin-left:25px">
-			<iframe width="615" height="400" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/1Qy_RX6mUWXmTghXZlzFPUyKBkS91DFK3nKZwAiNx_pY/htmlembed/sheet?gid=2035895927&range=I1"></iframe>
+			<iframe width="615" height="400" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/1Qy_RX6mUWXmTghXZlzFPUyKBkS91DFK3nKZwAiNx_pY/htmlembed/sheet?gid=2035895927&range=B1"></iframe>
 		</div>
 		<br>
+		
+		<!-- chart picker -->
+		<h2 style="text-align:center">Chart Picker</h2>
+		<div style="display:inline-block">
+			<span style="width:24.5%; margin-left:25%">
+				<label for="horizontalAxis" style="text-align:center">Horizontal Axis</label>
+				<select id="horizontalAxis" name="Horizontal_Axis">
+					<option value=""></option>
+					<option value="usernamePicker">Username</option>
+				</select>
+			</span>
+			<span style="width:24.5%">
+				<label for="verticalAxis" style="text-align:center">Vertical Axis</label>
+				<select id="verticalAxis" name="Vertical_Axis">
+				<option value=""></option>
+					<option value="combatScorePicker">Combat Score</option>
+					<option value="winRatioPicker">Win Ratio</option>
+				</select>
+			</span>
+			<!-- <button type="button" style="width:10%; display:block; margin-top:20px; margin:auto">Go!</input> -->
+		</div>
+		<br>
+		<div class="combatScorePerUsername"><iframe width="615" height="400" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/1Qy_RX6mUWXmTghXZlzFPUyKBkS91DFK3nKZwAiNx_pY/htmlembed/sheet?gid=2035895927&range=I2"></iframe></div>
+		<div class="winRatioPerUsername"><iframe width="615" height="400" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/1Qy_RX6mUWXmTghXZlzFPUyKBkS91DFK3nKZwAiNx_pY/htmlembed/sheet?gid=2035895927&range=I21"></iframe></div>
+		<br><br><br><br><br>
 		<h2 style="text-align:center">Username Lookup</h2>
 	</div>
+	
+	<!-- submit info, ajax call to write to google sheets -->
 	<script>
 		var $form = $('form#statSubmission'),
 			url = 'https://script.google.com/macros/s/AKfycbxXo8KFwGfgvmkygrP7U688E_vyrqCbnIg7d8sg3wm1A0o2SQGI/exec'
